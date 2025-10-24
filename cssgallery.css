@@ -1,0 +1,105 @@
+/* Make background video fill the screen */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Dim overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* adjust opacity if needed */
+  z-index: -1;
+}
+
+/* Centered content */
+.content {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+/* Title styling */
+.content h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+}
+
+/* Default (desktop/tablet) image style — landscape */
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Hover effect */
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Back to Garden button */
+#home-btn {
+  background: linear-gradient(135deg, #a8e063, #56ab2f);
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s, background 0.3s;
+}
+
+#home-btn:hover {
+  background: linear-gradient(135deg, #56ab2f, #a8e063);
+  transform: scale(1.1);
+}
+
+/* ===================== */
+/* 📱 Responsive Styling */
+/* ===================== */
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 1.8em;
+  }
+
+  /* Make images portrait on phones */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .gallery img {
+    height: 320px; /* taller for portrait */
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  #home-btn {
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+}
