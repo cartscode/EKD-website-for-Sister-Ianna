@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* === Background Video === */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* === Verse Overlay === */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 25px 35px;
+  border-radius: 15px;
+  animation: fade 2s ease-in-out;
+  width: 80%;
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+/* === Fade Animation === */
+.fade {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+/* === Gallery Button === */
+#gallery-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+#gallery-btn:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* === Responsive Button === */
+@media (max-width: 600px) {
+  #gallery-btn {
+    font-size: 0.9rem;
+    padding: 10px 24px;
+  }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === Responsive Adjustments === */
+
+/* Tablets */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .overlay {
+    width: 85%;
+    padding: 20px 30px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .overlay {
+    width: 90%;
+    padding: 15px 20px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  .overlay {
+    width: 95%;
+    padding: 10px 15px;
+  }
+}
