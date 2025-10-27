@@ -19,3 +19,29 @@ closeBtn.addEventListener("click", () => {
 document.getElementById("home-btn").addEventListener("click", () => {
   window.location.href = "index.html";
 });
+
+  // Back to homepage
+  document.getElementById("home-btn").addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+
+  // Popup image logic
+  const popup = document.getElementById("image-popup");
+  const popupImg = document.getElementById("popup-img");
+  const closePopup = document.getElementById("close-popup");
+
+  document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+      popup.style.display = "flex";
+      popupImg.src = img.src;
+    });
+  });
+
+  closePopup.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) popup.style.display = "none";
+  });
+
